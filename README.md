@@ -76,11 +76,3 @@ open index.html
 
 
 ---
-
-Contributing
-
-Feel free to improve it — new features, UI tweaks, bug fixes… have fun.
-Pull requests welcome.
-
-
----
