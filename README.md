@@ -1,78 +1,22 @@
-Calculator
+# Calculator
 
-A simple and responsive calculator built with HTML, CSS, and JavaScript.
-Handles basic arithmetic without any fuss.
+A dependency-free browser calculator for addition, subtraction, multiplication, and division. Open `index.html` directly; no build or server is needed.
 
-
----
-
-Features
-
-Add, subtract, multiply, divide
-
-Clear and intuitive interface
-
-Responsive layout
-
-Lightweight and dependency-free
-
-
-
----
-
-Demo
-
-(Add your live link here if you publish it — otherwise delete this section.)
-
-
----
-
-How to Use
-
-1. Open index.html in your browser
-
-
-2. Click the buttons to perform calculations
-
-
-3. Try not to divide by zero (your calculator might get dramatic)
-
-
-
-
----
-
-Project Structure
-
-.
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-
-
----
-
-Tech Stack
-
-HTML5
-
-CSS3
-
-JavaScript (ES6+)
-
-
-
----
-
-Setup
-
-No installation needed.
-Just download/clone and open:
-
+```sh
 git clone https://github.com/sai161812/calc1.git
-cd calculator
-open index.html
+cd calc1
+```
 
+Open `index.html` with your browser, then use the buttons. `C` clears the expression. Multiplication and division take precedence over addition and subtraction; decimal numbers and unary signs are supported. Invalid expressions and division by zero show `Error`. The next digit starts a new expression.
 
----
+Expressions are parsed as arithmetic rather than evaluated as JavaScript. Inputs are limited to 256 characters. Results use JavaScript floating-point numbers, so this is not a financial or arbitrary-precision calculator. Parentheses, powers, and scientific notation are not supported.
+
+## Verify
+
+With Node.js 18 or newer:
+
+```sh
+node --test tests/calculator.test.cjs
+```
+
+Checks cover precedence, decimals, leading zeros, malformed expressions, division by zero, and recovery after an error. Styles live in `styles.css`.
